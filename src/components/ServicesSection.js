@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 //images
 import clock from '../img/clock.svg';
@@ -6,50 +7,83 @@ import diaphragm from '../img/diaphragm.svg';
 import money from '../img/money.svg';
 import teamowork from '../img/teamwork.svg';
 import home from '../img/home2.png';
+// styles
+import {
+  StyledLayout,
+  StyledDescription,
+  StyledImageContainer,
+} from '../styles';
 
 const ServicesSection = () => {
   return (
-    <div className="services">
-      <div className="description">
+    <Services>
+      <StyledDescription>
         <h2>
           High <span>quality</span> services
         </h2>
-        <div className="cards">
-          <div className="card">
+        <StyledCards>
+          <StyledCard>
             <div className="icon">
               <img src={clock} alt="clock" />
               <h3>Clock</h3>
             </div>
             <p>Id magna elit ea anim.</p>
-          </div>
-          <div className="card">
+          </StyledCard>
+          <StyledCard>
             <div className="icon">
               <img src={diaphragm} alt="diaphragm" />
               <h3>Diaphragm</h3>
             </div>
             <p>Id magna elit ea anim.</p>
-          </div>
-          <div className="card">
+          </StyledCard>
+          <StyledCard>
             <div className="icon">
               <img src={money} alt="money" />
               <h3>Money.</h3>
             </div>
             <p>Id magna elit ea anim.</p>
-          </div>
-          <div className="card">
+          </StyledCard>
+          <StyledCard>
             <div className="icon">
               <img src={teamowork} alt="teamwork" />
               <h3>Teamwork</h3>
             </div>
             <p>Id magna elit ea anim.</p>
-          </div>
-        </div>
-      </div>
-      <div className="image">
+          </StyledCard>
+        </StyledCards>
+      </StyledDescription>
+      <StyledImageContainer>
         <img src={home} alt="home" />
-      </div>
-    </div>
+      </StyledImageContainer>
+    </Services>
   );
 };
+
+const Services = styled(StyledLayout)`
+  h2 {
+    padding-bottom: 5rem;
+  }
+  p {
+    width: 70%;
+    padding: 2rem 0rem 4rem 0rem;
+  }
+`;
+const StyledCards = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+const StyledCard = styled.div`
+  flex-basis: 20rem;
+  .icon {
+    display: flex;
+    align-items: center;
+    h3 {
+      margin-left: 1rem;
+      background: white;
+      color: black;
+      padding: 1rem;
+    }
+  }
+`;
 
 export default ServicesSection;
