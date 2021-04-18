@@ -9,19 +9,26 @@ import ContactUs from './pages/ContactUs';
 import Nav from './components/Nav';
 import MovieDetail from './pages/movieDetail';
 // router
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
+// animation
+import { AnimatePresence } from 'framer-motion';
 
 function App() {
+  const location = useLocation();
+  console.log(location);
   return (
     <div className="App">
       <GlobalStyle />
       <Nav />
-      <Switch>
-        <Route path="/" exact component={AboutUs} />
-        <Route path="/work" exact component={OurWork} />
-        <Route path="/work/:id" component={MovieDetail} />
-        <Route path="/contact" component={ContactUs} />
-      </Switch>
+      <AnimatePresence exitBeforeEnter>
+        {/* framer motion needs location and key prop on <Switch> in order to use exit and enter animations. https://www.framer.com/api/motion/animate-presence/*/}
+        <Switch location={location} key={location.pathname}>
+          <Route path="/" exact component={AboutUs} />
+          <Route path="/work" exact component={OurWork} />
+          <Route path="/work/:id" component={MovieDetail} />
+          <Route path="/contact" component={ContactUs} />
+        </Switch>
+      </AnimatePresence>
     </div>
   );
 }
