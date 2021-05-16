@@ -14,7 +14,7 @@ const AboutUs = () => {
       initial="hidden"
       animate="show"
       exit="exit"
-      style={{ background: '#fff' }}
+      style={{ background: '#grey' }}
     >
       <AboutSection />
       <ServicesSection />
