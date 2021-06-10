@@ -9,6 +9,7 @@ import {
 
 import { motion } from 'framer-motion';
 import { titleAnimation, fade, photoAnimation } from '../animation';
+import Wave from "../components/Wave";
 
 const AboutSection = () => {
   return (
@@ -40,6 +41,7 @@ const AboutSection = () => {
           alt="guy with camera"
         ></motion.img>
       </StyledImageContainer>
+      <Wave />
     </StyledLayout>
   );
 };
