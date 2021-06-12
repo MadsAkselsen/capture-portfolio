@@ -7,6 +7,7 @@ import diaphragm from '../img/diaphragm.svg';
 import money from '../img/money.svg';
 import teamowork from '../img/teamwork.svg';
 import home from '../img/home2.png';
+
 // styles
 import {
   StyledLayout,
@@ -14,9 +15,19 @@ import {
   StyledImageContainer,
 } from '../styles';
 
+// test
+import { fade } from '../animation';
+import { UseScroll } from './useScroll';
+
 const ServicesSection = () => {
+  const [element, controls] = UseScroll(0.5);
   return (
-    <Services>
+    <Services
+      variants={fade}
+      animate={controls}
+      initial={'hidden'}
+      ref={element}
+    >
       <StyledDescription>
         <h2>
           High <span>quality</span> services
