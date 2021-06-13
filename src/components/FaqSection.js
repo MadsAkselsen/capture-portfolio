@@ -11,7 +11,7 @@ import { UseScroll } from './useScroll';
 import { scrollReveal } from '../animation';
 
 const FaqSection = () => {
-  const [element, controls] = UseScroll(0.5);
+  const [element, controls] = UseScroll(0.3);
   return (
     <StyledFaq
       variants={scrollReveal}

@@ -15,10 +15,11 @@ import {
   sliderContainer,
 } from '../animation';
 import { UseScroll } from '../components/useScroll';
+import ScrollTop from '../components/ScrollTop';
 
 const OurWork = () => {
-  const [element, controls] = UseScroll();
-  const [element2, controls2] = UseScroll();
+  const [element, controls] = UseScroll(0.3);
+  const [element2, controls2] = UseScroll(0.3);
   return (
     <StyledWork
       variants={pageAnimation}
@@ -67,6 +68,7 @@ const OurWork = () => {
           <img src={goodtimes} alt="good times" />
         </Link>
       </StyledMovie>
+      <ScrollTop />
     </StyledWork>
   );
 };
@@ -77,6 +79,9 @@ const StyledWork = styled(motion.div)`
   padding: 5rem 10rem;
   h2 {
     padding: 1rem 0rem;
+  }
+  @media (max-width: 1300px) {
+    padding: 2rem 2rem;
   }
 `;
 const StyledMovie = styled(motion.div)`
